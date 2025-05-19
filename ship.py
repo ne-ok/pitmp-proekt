@@ -11,9 +11,9 @@ class Ship(Sprite):
 
         # Загрузка изображения корабля и получение прямоугольника.
         self.image = pygame.image.load('C:/Users/kruas/OneDrive/Рабочий стол/LALA/alien_invasion/images/ship.bmp')
-        scale_factor = 0.2 # Уменьшение размера в 2 раза.
+        scale_factor = 0.2  # Уменьшение размера в 2 раза.
         new_size = (int(self.image.get_width() * scale_factor), int(self.image.get_height() * scale_factor))
-        self.image = pygame.transform.scale(self.image, new_size) # Масштабируем изображение.
+        self.image = pygame.transform.scale(self.image, new_size)  # Масштабируем изображение.
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -34,7 +34,7 @@ class Ship(Sprite):
             self.center += self.ai_settings.ship_speed_factor
         if self.moving_left and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
-        
+
         # Обновление атрибута rect на основании self.center.
         self.rect.centerx = self.center
 
